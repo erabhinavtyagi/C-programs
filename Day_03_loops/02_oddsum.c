@@ -1,0 +1,24 @@
+/*Develop a C program to find sum of all odd numbers upto N using while loop. */
+
+#include<stdio.h>
+
+int
+main ()
+{
+  int n, i = 1, sum = 0;
+
+  printf ("Enter any number: ");
+  scanf ("%d", &n);
+
+  while (i <= n)
+    {
+      if (i % 2 != 0)
+	{
+	  sum = sum + i;
+	}
+      i++;
+    }
+  printf ("Sum of all odd numbers upto %d is %d.\n", n, sum);
+  return 0;
+
+}

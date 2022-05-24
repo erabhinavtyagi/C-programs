@@ -1,0 +1,65 @@
+//2. Write c programs to demonstrate various storage classes.
+// auto, register, static, Extern
+
+#include<stdio.h>
+
+void def_auto();
+void def_register();
+void def_static();
+void def_extern();
+
+int l;			//Global (Extern) Variable declared.
+
+void main()
+{
+printf("AUTO STORAGE CLASS\n");
+	def_auto(); 
+	def_auto(); 
+printf("\n"); 
+
+printf("REGISTER STORAGE CLASS\n");
+	def_register();
+	def_register();
+printf("\n"); 
+
+printf("STATIC STORAGE CLASS\n");
+	def_static();
+	def_static();
+printf("\n"); 
+
+printf("EXTERN STORAGE CLASS\n");
+	def_extern();
+	def_extern();
+printf("\n"); 
+
+}
+
+//----------Functions---------------
+
+void def_auto()
+{
+	auto int i= 10;
+	printf("Value of i declared as AUTO: %d\n", i);
+}
+
+void def_register()
+{
+	register int j= 10;
+	printf("Value of j declared as REGISTER: %d\n", j);
+}
+
+void def_static()
+{
+	static int k= 10;
+	k+=5;
+	printf("Value of k declared as STATIC: %d\n", k);
+}
+
+void def_extern()
+{
+	extern int l;
+	printf("Value of l declared as EXTERN: %d\n", l);
+
+	l=20;
+	printf("New Value of Extern variable l is %d\n",l);	
+}

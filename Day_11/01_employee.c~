@@ -1,0 +1,38 @@
+//    1. Write a program to read and print an Employee’s details using Structure.
+//Use array of structures and pointer to the array of structures concepts.
+
+#include<stdio.h>
+
+struct employee{		// Employee structure is declared.
+int id;
+char name[20];
+float salary;
+};
+
+void main ()
+{
+ struct employee emp;		// emp object is created.
+ struct employee *ptr = NULL;
+ 
+ ptr= &emp;			//Address of emp 1st record is assigned to ptr.
+
+ //---------Input by user----------
+ printf("Enter details of Employee.\n");
+ printf("Enter Employee Id: ");
+ scanf("%d",&ptr->id);
+
+ printf("Enter Name: ");
+ scanf("%s",ptr->name);
+
+ printf("Enter Salary: ");
+ scanf("%f",&ptr->salary);
+
+ printf("\n");
+//---------Output------------------
+
+printf("DETAILS ENTERED ARE:\n");
+printf("Emp ID: %d\n", ptr->id);
+printf("Name: %s\n",ptr->name);
+printf("Salary: %.2f\n",ptr->salary);
+
+}

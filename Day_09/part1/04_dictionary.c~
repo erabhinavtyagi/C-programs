@@ -1,0 +1,52 @@
+//    4. Write a program to read ‘n’ number of strings using two-dimensional character array, sort them and display the sorted list of strings on the screen. (use strcmp and strcpy library functions) 
+
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+
+	int i;	
+	char str[5][10];				 	// 2D-Array stores "5" strings & each string have "10" characters 
+
+//-----------INPUT FROM USER----------------------------	
+
+	printf ("Enter Words which are to be arranged in Alphabetical Order: ");
+	for(i=0; i<5 ; i++)
+	{
+		scanf("%s",str[i]);
+	}
+	
+	printf("Entered Strings are: ");
+	for(i=0; i<5 ; i++)
+	{
+		printf("%s\t",str[i]);
+	}
+	printf("\n");
+
+//---------Sorting Process-------------------
+	printf("After Sorting: ");
+	int k;
+	char temp[10];
+	for(int j=0; j<5;j++)
+	{
+	for (i=0; i<5; i++)	
+	{
+	k = strcasecmp(str[i],str[i+1]);
+	if(k>=1)
+	{
+	strcpy(temp,str[i]);
+	strcpy(str[i],str[i+1]);
+	strcpy(str[i+1],temp);
+	}
+
+	printf("%s\t",str[i]);
+	
+	}
+	printf("\n");
+	}
+return 0;
+}
+
+
+

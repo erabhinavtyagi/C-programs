@@ -1,0 +1,34 @@
+/*1. A C program contains the following declaration 
+
+float table[2][3] = { { 1.1,1.2,1.3},{2.1,2.2,2.3}}; 
+a) What is the meaning of a table? 
+b) What is the meaning of (table+1)? 
+c) What is the meaning of *(table+1)? 
+d) What is the meaning of (*(table+1)+1)? 
+e) What is the meaning of (*(table)+1)? 
+f) What is the value of *(*(table+1) +1)? 
+g) What is the value of *(*(table)+1)? 
+h) What is the value of *(*(table+1)? 
+i) What is the value of *(*(table) + 1)+1? 
+*/
+
+#include <stdio.h>
+
+void
+main ()
+{
+  float table[2][3] = { {1.1, 1.2, 1.3},	//Row1
+		        {2.1, 2.2, 2.3}		//Row2
+                      };
+//float *ptr[3] =table;
+
+  printf ("(table+1)		 : %p\n", (table+1));			// Base Address of Row2
+  printf ("*(table+1)		 : %p\n", *(table + 1));		// Address of First element of Row2
+  printf ("(*(table+1)+1)	 : %p\n", (*(table + 1) + 1));		// Address of second element of Row2
+  printf ("(*(table)+1)`	 : %p\n", (*(table) + 1));		// Address of second element of Row1 
+  printf ("*(*(table+1) +1) 	 : %.1f\n", (*(*table + 1) + 1));	// Value of table[1][1]
+  printf ("*(*(table)+1)	 : %.1f\n", (*(*(table) + 1)));		// Value of table[0[1]
+  printf ("*(*(table+1))	 : %.1f\n", (*(*(table + 1))));		// Value of table[1][0]
+  printf ("*(*(table) + 1)+1	 : %.1f\n", (*(*(table) + 1) + 1));	// value of table[1][1]
+
+}
